@@ -8,10 +8,12 @@
             font-family: Arial, Helvetica, sans-serif;
             text-align: center;
             padding: 50px;
+            transition: background-color 0.5s ease;
         }
         h1 {
             color: #2c3e50;
             font-size: 48px;
+            transition: color 0.3s ease;
         }
         h2 {
             color: #2c3e50;
@@ -48,17 +50,43 @@
         li {
             margin: 10px 0;
         }
+        button {
+            background-color: #3498db;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+        .botones {
+            margin: 30px 0;
+        }
     </style>
 </head>
 <body>
-    <h1>¡Explora el Universo Digital con Yoshi!</h1>
+    <h1 id="tituloPrincipal">¡Explora el Universo Digital con Yoshi!</h1>
     
     <img src="https://cdn.pixabay.com/photo/2024/12/03/08/08/ai-generated-9241538_640.jpg" alt="Un programador trabajando" width="400">
+    
     <p>Esta es mi primera página web.</p>
     <p>Esta página la hice yo solo. Y recién empiezo.</p>
     <p>Mi meta: ser desarrollador Full Stack y trabajar desde casa.</p>
     
     <a href="https://www.google.com" target="_blank">🔍 Haz clic aquí para acceder a Google</a>
+    
+    <!-- SECCIÓN DE BOTONES -->
+    <div class="botones">
+        <button onclick="mostrarMensaje()">💬 Mostrar mensaje</button>
+        <button onclick="cambiarFondo()">🎨 Cambiar fondo</button>
+        <button onclick="cambiarTexto()">✏️ Cambiar título</button>
+    </div>
     
     <h2>🚀 Cosas que me gustan de programar</h2>
     <ul>
@@ -73,5 +101,33 @@
         <li>Dominar JavaScript</li>
         <li>Conseguir mi primer trabajo remoto</li>
     </ol>
+    
+    <script>
+        // Función para mostrar mensaje de bienvenida
+        function mostrarMensaje() {
+            alert("¡Hola, Yoshi! Bienvenido al mundo de JavaScript.");
+        }
+        
+        // Función para cambiar el color de fondo
+        function cambiarFondo() {
+            let colores = ["#f0f0f0", "#ffeaa7", "#ffcccc", "#ccffcc", "#d5f0ff"];
+            let colorAleatorio = colores[Math.floor(Math.random() * colores.length)];
+            document.body.style.backgroundColor = colorAleatorio;
+        }
+        
+        // Función para cambiar el texto del título
+        function cambiarTexto() {
+            let titulo = document.getElementById("tituloPrincipal");
+            let textos = [
+                "¡Sigue aprendiendo, Yoshi!",
+                "El código es poder 💻",
+                "Tú puedes ser Full Stack",
+                "Nunca pares de aprender",
+                "¡Ya eres un programador!"
+            ];
+            let textoAleatorio = textos[Math.floor(Math.random() * textos.length)];
+            titulo.textContent = textoAleatorio;
+        }
+    </script>
 </body>
 </html>
