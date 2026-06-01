@@ -103,9 +103,14 @@
     </ol>
     
     <script>
-        // Función para mostrar mensaje de bienvenida
+        // Función que saluda al visitante preguntando su nombre
         function mostrarMensaje() {
-            alert("¡Hola, Yoshi! Bienvenido al mundo de JavaScript.");
+            let nombre = prompt("¿Cómo te llamas?");
+            if (nombre) {
+                alert("¡Bienvenido/a " + nombre + "! Gracias por visitar mi página.");
+            } else {
+                alert("¡Bienvenido/a! Gracias por visitar mi página.");
+            }
         }
         
         // Función para cambiar el color de fondo
